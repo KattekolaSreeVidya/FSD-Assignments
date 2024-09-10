@@ -19,6 +19,7 @@ function Vec(x, y) {
   console.log(new Vec(3, 4).length); // → 5
   console.log("--------------------------")
 
+  
 // Question 2: Group Class
 class Group {
     constructor() {

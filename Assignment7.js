@@ -87,3 +87,25 @@ console.log(arrayToList([10, 20]));
 console.log(listToArray(arrayToList([10, 20, 30])));
 console.log(prepend(10, prepend(20, null)));
 console.log(nth(arrayToList([10, 20, 30]), 1));
+
+
+// // function reverse(arr,leftindex,rightindex){
+// //     while(leftindex<rightindex){
+// //         let temp=arr[leftindex]
+// //         arr[leftindex]=arr[rightindex]
+// //         arr[rightindex]=temp
+// //         leftindex++
+// //         rightindex--
+// //     }
+// // }
+
+// // function middleindex(arr){
+// //     n=arr.length
+// //     let middleindex=Math.floor(n/2);
+// //     reverse(arr,0,middleindex-1);
+// //     reverse(arr,middleindex+1,n-1);
+// //     return arr;
+// // }
+
+// // let array=[7,6,5,4,3,2,1]
+// // console.log(middleindex(array))
