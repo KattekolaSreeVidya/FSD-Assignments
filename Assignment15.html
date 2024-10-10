@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab Content Example</title>
+  <style>
+    /* Style for the tabs */
+    .tabs {
+      margin: 20px 0;
+    }
+
+    .tabs button {
+      margin: 5px;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    /* Default style for all tab content - hidden */
+    .tab-content {
+      display: none;
+      padding: 20px;
+      border: 1px solid #ddd;
+      margin-top: 10px;
+    }
+
+    /* Style for active tab */
+    .active {
+      display: block;
+    }
+
+    /* Additional styling for the paragraph and spans */
+    p {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Heading with a <span>span</span> element.</h1>
+  <p>A paragraph with <span>one</span>, <span>two</span> spans.</p>
+
+  <!-- Tabs Section -->
+  <div class="tabs">
+    <button data-tab="tab1">Tab One</button>
+    <button data-tab="tab2">Tab Two</button>
+    <button data-tab="tab3">Tab Three</button>
+  </div>
+
+  <!-- Tab Content -->
+  <div id="tab1" class="tab-content active">
+    Tab one content
+  </div>
+  <div id="tab2" class="tab-content">
+    Tab two content
+  </div>
+  <div id="tab3" class="tab-content">
+    Tab three content
+  </div>
+
+  <script>
+    // Select all buttons and tab content
+    const tabs = document.querySelectorAll('.tabs button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    // Add click event to each tab
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Hide all tab content
+        tabContents.forEach(content => {
+          content.classList.remove('active');
+        });
+
+        // Remove active class from all tabs
+        tabs.forEach(t => {
+          t.style.fontWeight = 'normal';
+        });
+
+        // Get the tab that was clicked
+        const tabId = tab.getAttribute('data-tab');
+
+        // Show the relevant tab content
+        document.getElementById(tabId).classList.add('active');
+
+        // Style the active tab button
+        tab.style.fontWeight = 'bold';
+      });
+    });
+  </script>
+
+</body>
+</html>
